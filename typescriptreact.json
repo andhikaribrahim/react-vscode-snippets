@@ -1,0 +1,106 @@
+{
+	"MUI Typography Component": {
+		"prefix": "muiTypography",
+		"body": [
+			"<Typography fontWeight={${1:500}} fontSize=\"${2:SIZE}\" lineHeight=\"${3:HEIGHT}\">",
+			"  ${4:TEXT}",
+			"</Typography>"
+		],
+		"description": "Insert a Typography component with customizable weight, size, height, and text."
+	},
+	"MUI Flex Row": {
+		"prefix": "flexRow",
+		"body": [
+			"<Box",
+			"  sx={{",
+			"    display: 'flex',",
+			"    alignItems: '${1|center,flex-start,flex-end|}',",
+			"    justifyContent: '${2|center,flex-start,flex-end,space-between,space-around,space-evenly|}',",
+			"    flexDirection: 'row',",
+			"    gap: '${3:SIZE}',",
+			"  }}",
+			">",
+			"  ${4:CHILDREN}",
+			"</Box>"
+		],
+		"description": "Insert a MUI Box component with flex display, row direction, and customizable alignment and gap."
+	},
+	"MUI Flex Column": {
+		"prefix": "flexColumn",
+		"body": [
+			"<Box",
+			"  sx={{",
+			"    display: 'flex',",
+			"    alignItems: '${1|center,flex-start,flex-end|}',",
+			"    justifyContent: '${2|center,flex-start,flex-end,space-between,space-around,space-evenly|}',",
+			"    flexDirection: 'column',",
+			"    gap: '${3:SIZE}',",
+			"  }}",
+			">",
+			"  ${4:CHILDREN}",
+			"</Box>"
+		],
+		"description": "Insert a MUI Box component with flex display, column direction, and customizable alignment and gap."
+	},
+	"New React Component": {
+		"prefix": "newComponent",
+		"body": [
+			"type ${1:NewComponent}PropsType = {",
+			"  // Add props here",
+			"}",
+			"",
+			"const ${1:NewComponent} = (props: ${1:NewComponent}PropsType) => {",
+			"  // Add logic here",
+			"  return (",
+			"    <div>",
+			"      ${1:NewComponent}",
+			"    </div>",
+			"  )",
+			"}",
+			"",
+			"export default ${1:NewComponent}"
+		],
+		"description": "Create a new React component with a type definition and multi-cursor support for the component name."
+	},
+	"Custom React Hook": {
+		"prefix": "customHook",
+		"body": [
+			"import { useState, useEffect } from 'react'",
+			"",
+			"const use${1:CustomHook} = () => {",
+			"  const [state, setState] = useState()",
+			"",
+			"  useEffect(() => {",
+			"    // Fetch data or perform side effects here",
+			"  }, [])",
+			"",
+			"  return {",
+			"    state,",
+			"    setState,",
+			"  }",
+			"}",
+			"",
+			"export default use${1:CustomHook}"
+		],
+		"description": "Create a custom React hook with useState and useEffect, with multi-cursor support for the hook name."
+	},
+	"API Service Method with Types": {
+		"prefix": "createService",
+		"body": [
+			"export type ${1:METHOD}${2:SERVICE_NAME}ParamsType = {",
+			"  // TODO: Add params here",
+			"}",
+			"",
+			"export type ${1:METHOD}${2:SERVICE_NAME}ResponseType = {",
+			"  // TODO: Add response fields here",
+			"}",
+			"",
+			"export const ${1:METHOD}${2:SERVICE_NAME} = (params: ${1:METHOD}${2:SERVICE_NAME}ParamsType) =>",
+			"  client.${1:METHOD}<${1:METHOD}${2:SERVICE_NAME}ResponseType, true>({",
+			"    url: '${3:ENDPOINT}',",
+			"    params: params,",
+			"  })"
+		],
+		"description": "Create an API service method with type definitions for params and response, and multi-cursor support for the HTTP method."
+	}
+}

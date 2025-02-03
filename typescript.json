@@ -1,0 +1,65 @@
+{
+	"API Service Method with Types": {
+		"prefix": "createService",
+		"body": [
+			"export type ${1:METHOD}${2:SERVICE_NAME}ParamsType = {",
+			"  // TODO: Add params here",
+			"}",
+			"",
+			"export type ${1:METHOD}${2:SERVICE_NAME}ResponseType = {",
+			"  // TODO: Add response fields here",
+			"}",
+			"",
+			"export const ${1:METHOD}${2:SERVICE_NAME} = (params: ${1:METHOD}${2:SERVICE_NAME}ParamsType) =>",
+			"  client.${1:METHOD}<${1:METHOD}${2:SERVICE_NAME}ResponseType, true>({",
+			"    url: '${3:ENDPOINT}',",
+			"    params: params,",
+			"  })"
+		],
+		"description": "Create an API service method with type definitions for params and response, and multi-cursor support for the HTTP method."
+	},
+
+	"Create Async Thunk Redux": {
+		"prefix": "reduxAsyncThunk",
+		"body": [
+			"export const ${1:THUNK_NAME} = createAsyncThunk<${2:RESPONSE_TYPE}, ${3:PARAMS_TYPE}>(",
+			"  '${4:ACTION_NAME}',",
+			"  async (${5:PARAMS}, { rejectWithValue }) => {",
+			"    try {",
+			"      const response = await ${6:SERVICE_NAME}(${5:PARAMS})",
+			"      return response.data",
+			"    } catch (error) {",
+			"      callErrorMsg(error)",
+			"      return rejectWithValue((error as Error).message)",
+			"    }",
+			"  },",
+			")"
+		],
+		"description": "Create an async thunk for Redux Toolkit with multi-cursor support for the method name and service name."
+	},
+	"Create Slice Redux": {
+		"prefix": "reduxSlice",
+		"body": [
+			"import { createSlice, PayloadAction } from '@reduxjs/toolkit'",
+			"",
+			"export interface ${1:STATE_NAME}StateType {",
+			"  // TODO: Define state",
+			"}",
+			"",
+			"const initialState: ${1:STATE_NAME}StateType = {",
+			"  // TODO: Define initial state",
+			"}",
+			"",
+			"const ${1:STATE_NAME}Slice = createSlice({",
+			"  name: '${1:STATE_NAME}',",
+			"  initialState,",
+			"  reducers: {",
+			"    // TODO: Define reducers",
+			"  },",
+			"})",
+			"",
+			"export default ${1:STATE_NAME}Slice"
+		],
+		"description": "Create a slice for Redux Toolkit with multi-cursor support for the slice name."
+	}
+}
