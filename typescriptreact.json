@@ -8,40 +8,6 @@
 		],
 		"description": "Insert a Typography component with customizable weight, size, height, and text."
 	},
-	"MUI Flex Row": {
-		"prefix": "flexRow",
-		"body": [
-			"<Box",
-			"  sx={{",
-			"    display: 'flex',",
-			"    alignItems: '${1|center,flex-start,flex-end|}',",
-			"    justifyContent: '${2|center,flex-start,flex-end,space-between,space-around,space-evenly|}',",
-			"    flexDirection: 'row',",
-			"    gap: '${3:SIZE}',",
-			"  }}",
-			">",
-			"  ${4:CHILDREN}",
-			"</Box>"
-		],
-		"description": "Insert a MUI Box component with flex display, row direction, and customizable alignment and gap."
-	},
-	"MUI Flex Column": {
-		"prefix": "flexColumn",
-		"body": [
-			"<Box",
-			"  sx={{",
-			"    display: 'flex',",
-			"    alignItems: '${1|center,flex-start,flex-end|}',",
-			"    justifyContent: '${2|center,flex-start,flex-end,space-between,space-around,space-evenly|}',",
-			"    flexDirection: 'column',",
-			"    gap: '${3:SIZE}',",
-			"  }}",
-			">",
-			"  ${4:CHILDREN}",
-			"</Box>"
-		],
-		"description": "Insert a MUI Box component with flex display, column direction, and customizable alignment and gap."
-	},
 	"New React Component": {
 		"prefix": "newComponent",
 		"body": [
@@ -102,5 +68,330 @@
 			"  })"
 		],
 		"description": "Create an API service method with type definitions for params and response, and multi-cursor support for the HTTP method."
+	},
+	"Flex Row": {
+		"prefix": "flexRow",
+		"body": ["display: 'flex', flexDirection: 'row',"],
+		"description": "Creates a flex container with row direction"
+	},
+	"Flex Column": {
+		"prefix": "flexCol",
+		"body": ["display: 'flex', flexDirection: 'column',"],
+		"description": "Creates a flex container with column direction"
+	},
+	"Items Center": {
+		"prefix": "itemsCenter",
+		"body": ["alignItems: 'center',"],
+		"description": "Centers items along the cross axis"
+	},
+	"Justify Between": {
+		"prefix": "justifyBetween",
+		"body": ["justifyContent: 'space-between',"],
+		"description": "Justifies content with space between"
+	},
+	"Justify Center": {
+		"prefix": "justifyCenter",
+		"body": ["justifyContent: 'center',"],
+		"description": "Centers content along the main axis"
+	},
+	"Flex Center": {
+		"prefix": "flexCenter",
+		"body": ["display: 'flex', alignItems: 'center', justifyContent: 'center',"],
+		"description": "Centers content both vertically and horizontally"
+	},
+	"Gap": {
+		"prefix": "gap",
+		"body": ["gap: ${1:1},"],
+		"description": "Adds gap between flex/grid items"
+	},
+	"Width Full": {
+		"prefix": "wFull",
+		"body": ["width: '100%',"],
+		"description": "Sets width to 100%"
+	},
+	"Height Full": {
+		"prefix": "hFull",
+		"body": ["height: '100%',"],
+		"description": "Sets height to 100%"
+	},
+	"Grow": {
+		"prefix": "grow",
+		"body": ["flexGrow: 1,"],
+		"description": "Sets flex-grow to 1"
+	},
+	"Padding": {
+		"prefix": "p",
+		"body": ["padding: ${1:1},"],
+		"description": "Add padding"
+	},
+	"Margin": {
+		"prefix": "m",
+		"body": ["margin: ${1:1},"],
+		"description": "Add margin"
+	},
+	"Position Absolute": {
+		"prefix": "posAbs",
+		"body": ["position: 'absolute',"],
+		"description": "Position absolute"
+	},
+	"Position Relative": {
+		"prefix": "posRel",
+		"body": ["position: 'relative',"],
+		"description": "Position relative"
+	},
+	"Border": {
+		"prefix": "border",
+		"body": ["border: '1px solid',"],
+		"description": "Add border"
+	},
+	"Border Radius": {
+		"prefix": "rounded",
+		"body": ["borderRadius: ${1:1},"],
+		"description": "Add border radius"
+	},
+	"Background Color": {
+		"prefix": "bg",
+		"body": ["backgroundColor: '${1:color}',"],
+		"description": "Add background color"
+	},
+	"Text Color": {
+		"prefix": "color",
+		"body": ["color: '${1:color}',"],
+		"description": "Add text color"
+	},
+	"Hide Overflow": {
+		"prefix": "hideOverflow",
+		"body": ["overflow: 'hidden',"],
+		"description": "Hide overflow content"
+	},
+	"Grid": {
+		"prefix": "grid",
+		"body": ["display: 'grid',"],
+		"description": "Display grid"
+	},
+	"Grid Columns": {
+		"prefix": "gridCols",
+		"body": ["gridTemplateColumns: 'repeat(${1:count}, 1fr)',"],
+		"description": "Grid template columns"
+	},
+	"Cursor Pointer": {
+		"prefix": "pointer",
+		"body": ["cursor: 'pointer',"],
+		"description": "Add pointer cursor"
+	},
+	"Text Align": {
+		"prefix": "textAlign",
+		"body": ["textAlign: '${1:center}',"],
+		"description": "Set text alignment"
+	},
+	"Font Weight": {
+		"prefix": "fw",
+		"body": ["fontWeight: ${1:500},"],
+		"description": "Set font weight"
+	},
+	"Transition": {
+		"prefix": "transition",
+		"body": ["transition: '${1:all} 0.3s ease',"],
+		"description": "Add transition"
+	},
+	"Scale Transform": {
+		"prefix": "scale",
+		"body": ["transform: 'scale(${1:1.1})',"],
+		"description": "Scale transform"
+	},
+	"Padding X": {
+		"prefix": "px",
+		"body": ["paddingX: ${1:1},"],
+		"description": "Add horizontal padding"
+	},
+	"Padding Y": {
+		"prefix": "py",
+		"body": ["paddingY: ${1:1},"],
+		"description": "Add vertical padding"
+	},
+	"Margin X": {
+		"prefix": "mx",
+		"body": ["marginX: ${1:1},"],
+		"description": "Add horizontal margin"
+	},
+	"Margin Y": {
+		"prefix": "my",
+		"body": ["marginY: ${1:1},"],
+		"description": "Add vertical margin"
+	},
+	"Box Shadow": {
+		"prefix": "shadow",
+		"body": ["boxShadow: ${1:1},"],
+		"description": "Add box shadow"
+	},
+	"Z Index": {
+		"prefix": "z",
+		"body": ["zIndex: ${1:1},"],
+		"description": "Set z-index"
+	},
+	"Opacity": {
+		"prefix": "opacity",
+		"body": ["opacity: ${1:0.8},"],
+		"description": "Set opacity"
+	},
+	"Position Top": {
+		"prefix": "top",
+		"body": ["top: ${1:0},"],
+		"description": "Set top position"
+	},
+	"Position Bottom": {
+		"prefix": "bottom",
+		"body": ["bottom: ${1:0},"],
+		"description": "Set bottom position"
+	},
+	"Position Left": {
+		"prefix": "left",
+		"body": ["left: ${1:0},"],
+		"description": "Set left position"
+	},
+	"Position Right": {
+		"prefix": "right",
+		"body": ["right: ${1:0},"],
+		"description": "Set right position"
+	},
+	"Min Width": {
+		"prefix": "minw",
+		"body": ["minWidth: ${1:0},"],
+		"description": "Set minimum width"
+	},
+	"Min Height": {
+		"prefix": "minh",
+		"body": ["minHeight: ${1:0},"],
+		"description": "Set minimum height"
+	},
+	"Max Width": {
+		"prefix": "maxw",
+		"body": ["maxWidth: ${1:100},"],
+		"description": "Set maximum width"
+	},
+	"Max Height": {
+		"prefix": "maxh",
+		"body": ["maxHeight: ${1:100},"],
+		"description": "Set maximum height"
+	},
+	"Hover": {
+		"prefix": "hover",
+		"body": ["'&:hover': { ${1} },"],
+		"description": "Add hover state styles"
+	},
+	"Media Query": {
+		"prefix": "media",
+		"body": ["'@media (min-width: ${1:600}px)': { ${2} },"],
+		"description": "Add media query"
+	},
+	"Text Decoration": {
+		"prefix": "underline",
+		"body": ["textDecoration: 'underline',"],
+		"description": "Add underline to text"
+	},
+	"Text Transform": {
+		"prefix": "uppercase",
+		"body": ["textTransform: 'uppercase',"],
+		"description": "Transform text to uppercase"
+	},
+	"Blur Filter": {
+		"prefix": "blur",
+		"body": ["filter: 'blur(${1:4}px)',"],
+		"description": "Add blur filter"
+	},
+	"Grid Area": {
+		"prefix": "gridArea",
+		"body": ["gridArea: '${1:auto}',"],
+		"description": "Set grid area"
+	},
+	"Grid Gap": {
+		"prefix": "gridGap",
+		"body": ["gap: '${1:8}px ${2:8}px',"],
+		"description": "Set grid gap"
+	},
+	"Border Bottom": {
+		"prefix": "borderB",
+		"body": ["borderBottom: '${1:1}px solid',"],
+		"description": "Add bottom border"
+	},
+	"Border Top": {
+		"prefix": "borderT",
+		"body": ["borderTop: '${1:1}px solid',"],
+		"description": "Add top border"
+	},
+	"Rotate": {
+		"prefix": "rotate",
+		"body": ["transform: 'rotate(${1:45}deg)',"],
+		"description": "Rotate element"
+	},
+	"Object Fit": {
+		"prefix": "objFit",
+		"body": ["objectFit: '${1:cover}',"],
+		"description": "Set object-fit property"
+	},
+	"White Space": {
+		"prefix": "nowrap",
+		"body": ["whiteSpace: 'nowrap',"],
+		"description": "Prevent text wrapping"
+	},
+	"Text Overflow": {
+		"prefix": "ellipsis",
+		"body": ["textOverflow: 'ellipsis',"],
+		"description": "Add ellipsis to overflowing text"
+	},
+	"Border None": {
+		"prefix": "borderNone",
+		"body": ["border: 'none',"],
+		"description": "Remove all borders"
+	},
+	"Background None": {
+		"prefix": "bgNone",
+		"body": ["background: 'none',"],
+		"description": "Remove background"
+	},
+	"Border Left": {
+		"prefix": "borderL",
+		"body": ["borderLeft: '${1:1}px solid',"],
+		"description": "Add left border"
+	},
+	"Border Right": {
+		"prefix": "borderR",
+		"body": ["borderRight: '${1:1}px solid',"],
+		"description": "Add right border"
+	},
+	"Border Top Left": {
+		"prefix": "borderTL",
+		"body": ["borderTopLeftRadius: ${1:4},"],
+		"description": "Add top left border radius"
+	},
+	"Border Top Right": {
+		"prefix": "borderTR",
+		"body": ["borderTopRightRadius: ${1:4},"],
+		"description": "Add top right border radius"
+	},
+	"Border Bottom Left": {
+		"prefix": "borderBL",
+		"body": ["borderBottomLeftRadius: ${1:4},"],
+		"description": "Add bottom left border radius"
+	},
+	"Border Bottom Right": {
+		"prefix": "borderBR",
+		"body": ["borderBottomRightRadius: ${1:4},"],
+		"description": "Add bottom right border radius"
+	},
+	"Border Color": {
+		"prefix": "borderC",
+		"body": ["borderColor: '${1:color}',"],
+		"description": "Set border color"
+	},
+	"Border Style": {
+		"prefix": "borderS",
+		"body": ["borderStyle: '${1:solid}',"],
+		"description": "Set border style"
+	},
+	"Border Width": {
+		"prefix": "borderW",
+		"body": ["borderWidth: ${1:1},"],
+		"description": "Set border width"
 	}
 }
